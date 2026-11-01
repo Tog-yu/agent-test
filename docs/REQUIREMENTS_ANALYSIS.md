@@ -2,7 +2,7 @@
 
 > 版本：1.0.1 · 日期：2026-10-31
 > 需求来源：笔试题目页面 `https://ks.wjx.com/vm/h46aF6R.aspx`（AI agent 笔试题）
-> 关联文档：`docs/DESIGN.md`（技术方案）、`docs/DEV_SPEC.md`（施工规格）、`docs/REFLECTIONS.md`（思考补充）
+> 关联文档：`docs/DESIGN.md`（技术方案）、`docs/DEV_SPEC.md`（施工规格）、`docs/THINKING.md`（思考补充）
 
 ---
 
@@ -89,7 +89,7 @@
 | R-OT-4 | 审计留痕 | `audit_trail.ai_reasoning` 为字符串数组；另出 `report.json` 带字段级 provenance |
 | R-OT-5 | 必须 Python + LangChain | 依赖与 import 可见；LLM 链路用 LangChain LCEL + 结构化输出 |
 | R-OT-6 | Harness 工程 | 见 `docs/DESIGN.md §9`：提案-校验分离、磁带回放、schema 重试、置信度路由、评测集 |
-| R-OT-7 | 5 点以上思考 | `docs/REFLECTIONS.md`（12 条） |
+| R-OT-7 | 5 点以上思考 | `docs/THINKING.md`（14 条） |
 
 ---
 
@@ -132,5 +132,5 @@
 | 6 结合记账主体判 AR/AP | `decide/ar_ap.py` + `tests/test_ar_ap.py`（正反四个象限） |
 | 7 检测重复账单和冲突 | `validate/validators.py` + `tests/test_validate.py` |
 | 8 Harness 设计 | `docs/DESIGN.md §9` + 实际代码（重试/回放/校验闸门/评测脚本） |
-| 9 5 点以上思考 | `docs/REFLECTIONS.md`（12 条） |
+| 9 5 点以上思考 | `docs/THINKING.md`（14 条） |
 | 10 Python + LangChain 实现 | `requirements.txt`、`pyproject.toml`、`extract/llm_extractor.py` |

@@ -43,7 +43,7 @@
 | A. 纯 LLM Agent（ReAct/工具调用自由编排） | 泛化好、开发快、演示效果好 | ① 字段级不可控，金额/币种幻觉难拦；② 每单多次调用，成本与时延高；③ 不可复现，回归测试只能靠"感觉"；④ prompt 注入面大 | 只借鉴"工具化"思想，不做自由编排 |
 | B. 纯规则模板（正则 + 表头定位） | 确定、快、可测 | 单据版式千变万化，规则爆炸；语义字段（AR/AP、变更意图）规则无能为力 | 作为**基线轨** |
 | C. **固定管线 + LLM 提案 + 代码闸门** | 可测可复现，LLM 只补语义长尾，风险点全部落在可单测的代码上 | 需要设计对账规则；版式极新时仍需人审 | **采用** |
-| D. 多 Agent 协作（解析 Agent / 校验 Agent / 决策 Agent 互评） | 结构清晰 | 编排复杂度、成本、延迟都翻倍；本任务规模不需要；且"Agent 互评"并不比确定性校验更可靠 | 不采用（`docs/REFLECTIONS.md` 有讨论） |
+| D. 多 Agent 协作（解析 Agent / 校验 Agent / 决策 Agent 互评） | 结构清晰 | 编排复杂度、成本、延迟都翻倍；本任务规模不需要；且"Agent 互评"并不比确定性校验更可靠 | 不采用（`docs/THINKING.md` 有讨论） |
 
 > LangChain 的角色：**不是**让 LLM 去编排流程，而是提供 `ChatPromptTemplate → with_structured_output → Pydantic` 的结构化抽取链、`RunnableWithFallbacks` 的降级链、`RunnableLambda` 的管线拼装，以及 token/重试/缓存的统一治理。管线骨架仍是我自己的 Python 代码——**框架是工具，不是架构**。
 
@@ -132,7 +132,7 @@ OutputRecord                        # 对外契约（严格键名）
 | G4 OCR 混淆 | 对含数字字段做字符集混淆扫描（`0/O`、`1/I/l`、`5/S`、`8/B`、`6/G`、`2/Z`、`,`/`.`）；**金额、单号只标记不修复** | 命中 → `warn` + `PENDING_REVIEW`（金额类） |
 | G5 重复 | ① 同单内 (费用名, 金额) 重复 ② 与历史账单 (reference_no, 费用名, 金额, 币种) 重复 | 同单重复 → 去重 + `warn`；跨单重复 → `blocker`（疑似重复入账） |
 
-> G4 的取舍很关键：OCR 把 `40.00` 认成 `4O.OO` 时，**不能**自动改成 `40.00` 入账。金额只做"标记 + 转人工"，因为修复方向有歧义（`40.00` vs `4O.OO` 谁对取决于原文），而财务错账成本远高于人工复核成本。见 `docs/REFLECTIONS.md` 第 2 条。
+> G4 的取舍很关键：OCR 把 `40.00` 认成 `4O.OO` 时，**不能**自动改成 `40.00` 入账。金额只做"标记 + 转人工"，因为修复方向有歧义（`40.00` vs `4O.OO` 谁对取决于原文），而财务错账成本远高于人工复核成本。见 `docs/THINKING.md` 第 2 条。
 
 ---
 
@@ -277,7 +277,7 @@ ShippingBillAgent/
 │   ├── REQUIREMENTS_ANALYSIS.md
 │   ├── DESIGN.md                # 本文
 │   ├── DEV_SPEC.md
-│   └── REFLECTIONS.md           # 验收第 9 条
+│   └── THINKING.md           # 验收第 9 条
 ├── src/shipping_bill_agent/
 │   ├── config.py  schema.py  pipeline.py  cli.py  audit.py
 │   ├── ingest/  dispatch.py eml_parser.py excel_parser.py word_parser.py pdf_parser.py
@@ -338,7 +338,7 @@ ShippingBillAgent/
 | 风险 | 影响 | 缓解 |
 |---|---|---|
 | OCR 网关的 `file` 必须是公网地址 | 本地文件传不上去 | 契约实现 + cassette 回放 + `tests/test_ocr_contract.py` 用本地 HTTP server 验证请求体与重试逻辑；真机调用见 DEV_SPEC §8.5 |
-| 样本是合成的 | 真机版式多样性未覆盖 | `normalize/charge_aliases.yaml` 与抽取正则尽量宽松；`REFLECTIONS.md` 第 5 条给了版式扩展方案 |
+| 样本是合成的 | 真机版式多样性未覆盖 | `normalize/charge_aliases.yaml` 与抽取正则尽量宽松；`THINKING.md` 第 5 条给了版式扩展方案 |
 | LLM 无 Key | 语义抽取退化 | rule_only 自动降级 + 标注 `degraded`，不静默 |
 | Word/Excel 版式自由度过高 | 表头定位失败 | 表头识别用"关键词打分 + 列序推断"双路，失败降级为整表文本送 LLM |
 | 多命中歧义 | 更新错单 | 只自动执行唯一命中；多命中一律 `PENDING_REVIEW` |
