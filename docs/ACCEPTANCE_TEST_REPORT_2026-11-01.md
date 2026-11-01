@@ -124,7 +124,7 @@
 | 6 | 结合记账主体判断 AR/AP | **通过** | 规则测试覆盖四象限；真实附件按规则不硬判 |
 | 7 | 检测重复账单和数据冲突 | **通过** | 重复行、勾稽、OCR 混淆、真/假冲突均有测试；本轮新增同源行去重 |
 | 8 | Harness 提升稳定性和输出准确性 | **通过** | Schema/证据锚定/重试/降级/审计 trace/金标门禁全部实际运行 |
-| 9 | 5 点以上思考 | **通过** | `docs/REFLECTIONS.md` 共 14 条 |
+| 9 | 5 点以上思考 | **通过（已进 README）** | README §5「我的思考」收录 10 条；`docs/REFLECTIONS.md` 全文 14 条 |
 | 10 | Python + LangChain 实现 | **通过（本轮真实 LLM）** | LangChain LCEL + Function Calling + Pydantic 结构化输出，线上 0 错误 |
 
 ## 6. 仍存在的缺口
