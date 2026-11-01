@@ -1,0 +1,28 @@
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# 密钥：绝不能入库，只保留 .env.example
+.env
+
+# 测试与缓存
+.pytest_cache/
+.pytest_tmp*/
+.coverage
+coverage.xml
+
+# 运行产物（可由 README 的命令复现）
+out/
+build/
+dist/
+
+# IDE / 系统 / 工具
+.idea/
+.vscode/
+.workbuddy/
+.DS_Store
+
+# 本地打包
+*.zip

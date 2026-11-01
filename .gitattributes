@@ -1,0 +1,14 @@
+# 统一按文本处理源码，但二进制与邮件原文不做换行转换
+* text=auto
+
+# EML 原文按 CRLF 保真：解析器断言依赖原始换行
+*.eml -text
+
+*.pdf binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.xlsx binary
+*.xls binary
+*.docx binary
+*.zip binary

@@ -1,0 +1,138 @@
+{
+  "_note": "金标：由人按需求逐条标注的期望输出（非由程序回填）。字段级比对见 scripts/evaluate.py。",
+  "records": [
+    {
+      "reference_no": "DN-202609-001",
+      "document_type": "Debit Note",
+      "issuer": "Destination Agent",
+      "recipient": "Origin Agent",
+      "document_date": "2026-09-20",
+      "charge_item": "Handling Charge",
+      "amount": 40.0,
+      "currency": "USD",
+      "payment_term": "PP",
+      "operation": "UPDATE",
+      "posting_type": "AP"
+    },
+    {
+      "reference_no": "DN-202609-001",
+      "document_type": "Debit Note",
+      "issuer": "Destination Agent",
+      "recipient": "Origin Agent",
+      "document_date": "2026-09-20",
+      "charge_item": "Terminal Handling Charge",
+      "amount": 120.0,
+      "currency": "USD",
+      "payment_term": "PP",
+      "operation": "NO_CHANGE",
+      "posting_type": "AP"
+    },
+    {
+      "reference_no": "DN-202609-001",
+      "document_type": "Debit Note",
+      "issuer": "Destination Agent",
+      "recipient": "Origin Agent",
+      "document_date": "2026-09-20",
+      "charge_item": "Documentation Fee",
+      "amount": 35.0,
+      "currency": "USD",
+      "payment_term": "PP",
+      "operation": "NO_CHANGE",
+      "posting_type": "AP"
+    },
+    {
+      "reference_no": "INV-202609-050",
+      "document_type": "Invoice",
+      "issuer": "Destination Agent",
+      "recipient": "Origin Agent",
+      "document_date": "2026-09-25",
+      "charge_item": "Trucking Charge",
+      "amount": 300.0,
+      "currency": "USD",
+      "payment_term": "CC",
+      "operation": "NO_CHANGE",
+      "posting_type": "AP"
+    },
+    {
+      "reference_no": "INV-202609-050",
+      "document_type": "Invoice",
+      "issuer": "Destination Agent",
+      "recipient": "Origin Agent",
+      "document_date": "2026-09-25",
+      "charge_item": "Customs Clearance Fee",
+      "amount": 80.0,
+      "currency": "USD",
+      "payment_term": "CC",
+      "operation": "CREATE",
+      "posting_type": "AP"
+    },
+    {
+      "reference_no": "INV-202609-050",
+      "document_type": "Invoice",
+      "issuer": "Destination Agent",
+      "recipient": "Origin Agent",
+      "document_date": "2026-09-25",
+      "charge_item": "Storage Charge",
+      "amount": 25.0,
+      "currency": "USD",
+      "payment_term": "CC",
+      "operation": "CREATE",
+      "posting_type": "AP"
+    },
+    {
+      "reference_no": "DN-202609-002",
+      "document_type": "Debit Note",
+      "issuer": "Origin Agent",
+      "recipient": "Destination Agent",
+      "document_date": "2026-10-06",
+      "charge_item": "Handling Charge",
+      "amount": 50.0,
+      "currency": "USD",
+      "payment_term": "PP",
+      "operation": "NO_CHANGE",
+      "posting_type": "AR"
+    },
+    {
+      "reference_no": "DN-202609-002",
+      "document_type": "Debit Note",
+      "issuer": "Origin Agent",
+      "recipient": "Destination Agent",
+      "document_date": "2026-10-06",
+      "charge_item": "Trucking Charge",
+      "amount": 280.0,
+      "currency": "USD",
+      "payment_term": "PP",
+      "operation": "CREATE",
+      "posting_type": "AR"
+    },
+    {
+      "reference_no": "CN-202609-007",
+      "document_type": "Credit Note",
+      "issuer": "Origin Agent",
+      "recipient": "Destination Agent",
+      "document_date": "2026-10-02",
+      "charge_item": "Terminal Handling Charge",
+      "amount": 15.0,
+      "currency": "USD",
+      "payment_term": "PP",
+      "operation": "CREATE",
+      "posting_type": "AP"
+    },
+    {
+      "reference_no": "DN-202609-003",
+      "document_type": "Debit Note",
+      "issuer": "Destination Agent",
+      "recipient": "Origin Agent",
+      "document_date": "2026-10-08",
+      "charge_item": "Handling Charge",
+      "amount": 4.0,
+      "currency": "USD",
+      "payment_term": "PP",
+      "operation": "PENDING_REVIEW",
+      "posting_type": "AP"
+    }
+  ],
+  "risk_expected": [
+    {"reference_no": "DN-202609-003", "charge_item": "Handling Charge", "reason": "OCR 混淆 + 勾稽不平"}
+  ]
+}

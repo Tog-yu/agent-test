@@ -1,0 +1,15 @@
+{
+  "code": 0,
+  "msg": "success",
+  "_fixture_note": "离线替身：按题目 OCR 契约响应的形状构造，非真实网关返回。真实链路请用 --ocr-mode gateway + SBA_OCR_PUBLIC_BASE。",
+  "data": {
+    "task": "orderChange",
+    "file": "DN-202609-003.png",
+    "pages": [
+      {
+        "page": 1,
+        "text": "DEBIT NOTE\nIssued by: Destination Agent\nTo: Origin Agent\nDebit Note No: DN-202609-003\nDate: 2026-10-08\nCharge Description                    Curr       Qty  Unit Price  Terms           Amount\n Handling Fee                          USD          1       4O.OO  PP               4O.OO\nTotal  40.00 USD\nPayment Terms: PP"
+      }
+    ]
+  }
+}

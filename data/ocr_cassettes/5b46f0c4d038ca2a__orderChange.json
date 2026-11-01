@@ -1,0 +1,15 @@
+{
+  "code": 0,
+  "msg": "success",
+  "_fixture_note": "离线替身：按题目 OCR 契约响应的形状构造，非真实网关返回。真实链路请用 --ocr-mode gateway + SBA_OCR_PUBLIC_BASE。",
+  "data": {
+    "task": "orderChange",
+    "file": "CN-202609-007.png",
+    "pages": [
+      {
+        "page": 1,
+        "text": "CREDIT NOTE\nIssued by: Origin Agent\nTo: Destination Agent\nCredit Note No: CN-202609-007\nDate: 2026-10-02\nB/L No: COSU6384910031\nCharge Description                    Curr       Qty  Unit Price  Terms           Amount\n THC                                   USD          1       15.00  PP               15.00\nSubtotal  15.00\nTotal  15.00 USD"
+      }
+    ]
+  }
+}

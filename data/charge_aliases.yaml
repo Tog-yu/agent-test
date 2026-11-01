@@ -1,0 +1,150 @@
+# 航运费用名称别名表
+# 结构：canonical（标准名） -> aliases（原始写法，含中英文/缩写/常见 OCR 拼错）
+# keywords：模糊匹配兜底用的关键词（子串命中即归类）
+canonical:
+  Handling Charge:
+    - Handling Fee
+    - H/C
+    - H/C Fee
+    - Handling Charges
+    - Handing Fee
+    - H/D Fee
+    - HD Fee
+    - H.D. Fee
+    - Handling
+    - 操作费
+    - 手续费
+  Documentation Fee:
+    - Doc Fee
+    - Docs Fee
+    - Doc. Fee
+    - Documentary Fee
+    - Documentation Charge
+    - Documentation
+    - 单证费
+    - 文件费
+  Terminal Handling Charge:
+    - THC
+    - T.H.C.
+    - Terminal Handling
+    - Terminal Handling Charges
+    - Term Handling Fee
+    - 码头操作费
+    - 码头费
+  Trucking Charge:
+    - Trucking Fee
+    - Trucking
+    - Truckage
+    - Haulage Fee
+    - Inland Haulage
+    - Inland Trucking
+    - 拖车费
+    - 卡车费
+    - 内陆运输费
+  Customs Clearance Fee:
+    - Customs Fee
+    - Customs Charges
+    - Customs Clearance
+    - Clearance Fee
+    - Customs Declaration Fee
+    - 报关费
+    - 清关费
+  Storage Charge:
+    - Storage Fee
+    - Storage
+    - Storage Charges
+    - Warehouse Fee
+    - 仓储费
+    - 堆存费
+  Ocean Freight:
+    - Freight
+    - Ocean Freight
+    - Sea Freight
+    - Basic Ocean Freight
+    - OF
+    - 海运费
+    - 运费
+  Bunker Adjustment Factor:
+    - BAF
+    - Bunker Surcharge
+    - Bunker Adjustment
+    - 燃油附加费
+  Currency Adjustment Factor:
+    - CAF
+    - Currency Surcharge
+    - 货币贬值附加费
+  ISPS Charge:
+    - ISPS
+    - ISPS Fee
+    - 港口安保费
+  AMS Fee:
+    - AMS
+    - Automated Manifest System Fee
+    - 反恐申报费
+  ENS Fee:
+    - ENS
+    - Entry Summary Declaration Fee
+  Telex Release Fee:
+    - Telex Release
+    - Telex Fee
+    - 电放费
+  Seal Fee:
+    - Seal Charge
+    - Container Seal Fee
+    - 铅封费
+  CFS Charge:
+    - CFS
+    - CFS Fee
+    - 拼箱费
+  Customs Inspection Fee:
+    - Inspection Fee
+    - Customs Exam Fee
+    - 查验费
+  Insurance Premium:
+    - Insurance
+    - Insurance Fee
+    - 保险费
+  Commission:
+    - Agency Commission
+    - 佣金
+  Demurrage:
+    - Demurrage Charge
+    - 滞期费
+  Detention:
+    - Detention Charge
+    - ADD'L DETENTION FREE TIME CHARGE
+    - Additional Detention
+    - 滞箱费
+  Wharfage Charge:
+    - Wharfage
+    - Wharfage Fee
+    - Wharfage Administration Fee
+    - 码头使用费
+  On Carriage Charge:
+    - On Carriage
+    - On Carriage Additional
+    - OCA
+
+keywords:
+  Handling Charge: [handling, hd fee, h c, 操作费]
+  Documentation Fee: [doc fee, documentation, 单证]
+  Terminal Handling Charge: [terminal handling, thc, 码头]
+  Trucking Charge: [trucking, haulage, truck, 拖车]
+  Customs Clearance Fee: [customs, clearance, 报关, 清关]
+  Storage Charge: [storage, warehouse, 仓储, 堆存]
+  Ocean Freight: [ocean freight, sea freight, 海运费]
+  Bunker Adjustment Factor: [bunker, baf, 燃油]
+  Currency Adjustment Factor: [caf, currency surcharge]
+  ISPS Charge: [isps]
+  AMS Fee: [ams]
+  ENS Fee: [ens]
+  Telex Release Fee: [telex]
+  Seal Fee: [seal, 铅封]
+  CFS Charge: [cfs, 拼箱]
+  Customs Inspection Fee: [inspection, exam, 查验]
+  Insurance Premium: [insurance, 保险]
+  Commission: [commission, 佣金]
+  Demurrage: [demurrage, 滞期]
+  Detention: [detention, 滞箱]
+  Wharfage Charge: [wharfage]
+  On Carriage Charge: [on carriage]
